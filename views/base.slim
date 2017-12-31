@@ -1,0 +1,26 @@
+html
+  head
+    title MOM, got work anot?
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+
+    link[href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"]
+    link[rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"]
+    link[rel="stylesheet" type="text/css" href="/base.scss"]
+
+    script[defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"]
+  body
+    main
+      .container
+        h1 MOM, got work anot?
+
+        == yield
+
+    footer.page-footer
+      .container
+        .row.grey-text.text-lighten-3
+          | © 2017 Tay Kang Sheng
+          a.grey-text.text-lighten-3.right[href="https://www.github.com/TayKangSheng/mom-got-work-anot"]
+            i.fab.fa-github.fa-lg
+
+    script[type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"]
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"]

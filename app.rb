@@ -6,26 +6,32 @@ end
 
 require "yaml"
 require "date"
+require "slim"
 
 get "/" do
   today = Time.now.getlocal("+08:00").to_date
 
   dates = get_file(today.year)
-  return "No data found." if dates.nil?
+  @message = "No data found." if dates.nil?
 
   dates["holidays"].each do |d|
     holiday_date = Date.parse(d["date"])
 
-    return "No. Its #{d["name"]}" if holiday_date == today
+    @message = "No. Its #{d["name"]}" if holiday_date == today
 
     if holiday_date.sunday?
-      return "No. Its #{d["name"]} in lieu!" if (holiday_date + 1) == today
+      @message = "No. Its #{d["name"]} in lieu!" if (holiday_date + 1) == today
     end
   end
 
-  return "No. Its Saturday!" if today.saturday?
-  return "No. Its Sunday!" if today.sunday?
-  "Yes! Go to work!"
+  @message = "No. Its Saturday!" if today.saturday?
+  @message = "No. Its Sunday!" if today.sunday?
+
+  @message = "Yes! Go to work!" if @message.empty?
+
+  slim :base, layout: false do
+    slim :index
+  end
 end
 
 def get_file(year)

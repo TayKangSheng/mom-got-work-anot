@@ -37,6 +37,10 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.0)
       tilt (~> 2.0)
+    slim (3.0.8)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.8.0)
     tilt (2.0.8)
     unicode-display_width (1.3.0)
 
@@ -48,6 +52,7 @@ DEPENDENCIES
   rubocop
   rubocop-github
   sinatra
+  slim
 
 BUNDLED WITH
    1.16.0.pre.3
