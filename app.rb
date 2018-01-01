@@ -35,7 +35,7 @@ def get_status_today
   dates["holidays"].each do |d|
     holiday_date = Date.parse(d["date"])
 
-    return "No. Its #{d["name"]}" if holiday_date == today
+    return "No. Its #{d["name"]}." if holiday_date == today
 
     if holiday_date.sunday?
       return "No. Its #{d["name"]} in lieu!" if (holiday_date + 1) == today
