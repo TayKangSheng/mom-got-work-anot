@@ -45,7 +45,7 @@ def get_status_today
   return "No. Its Saturday!" if today.saturday?
   return "No. Its Sunday!" if today.sunday?
 
-  return "Yes! Go to work!" if @message.empty?
+  return "Yes! Go to work!"
 end
 
 def get_file(year)
