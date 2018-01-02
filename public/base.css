@@ -1,6 +1,5 @@
 body {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
 }
 
@@ -9,5 +8,5 @@ main {
 }
 
 footer a {
-  padding: 0 0 0 20;
+  padding: 0px 0px 0px 20px;
 }
